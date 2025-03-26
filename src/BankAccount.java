@@ -221,4 +221,24 @@ public class BankAccount {
             throw new IllegalArgumentException("INVALID CARD NUMBER");
         }
     }
+    public String toString() {
+        ArrayList<Node> arr = new ArrayList<>();
+        class Traverse{
+            public Traverse(Node temp) {
+                if(temp.left != null) {
+                    new Traverse(temp.left);
+                }
+                arr.add(temp);
+                if(temp.right != null) {
+                    new Traverse(temp.right);
+                }
+            }
+        }
+        new Traverse(root);
+        String str = "";
+        for(int i = 0; i < arr.size(); i++) {
+            str += arr.get(i).cardnum + " NAME : " + arr.get(i).name + "  ID : " + arr.get(i).ID + "  BALANCE : " + arr.get(i).balance +  ". \n";
+        }
+        return str;
+    }
 }
