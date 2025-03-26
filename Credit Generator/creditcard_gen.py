@@ -78,3 +78,5 @@ def american_express():
                 ones.clear()
                 american.append(3)
                 american.append(4)
+viza_generator()
+master_generator()
